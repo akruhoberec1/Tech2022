@@ -34,3 +34,4 @@ zaposlenici int NOT NULL,
 korisnici int not NULL
 );
 
+
