@@ -24,13 +24,13 @@ oib int(11)
 
 create table zaposlenici(
 iddjelatnik int not null primary key auto_increment,
-osoba int(1),
+osoba int not NULL,
 iban varchar(20)
 );
 
 create table korisnici(
 idklijent int not null primary key auto_increment,
-osoba int(1)
+osoba int not NULL
 );
 
 create table poveznica(
