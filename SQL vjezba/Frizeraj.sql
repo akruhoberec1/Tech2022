@@ -4,7 +4,7 @@ use frizeraj;
 
 create table rezervacija(
 id int not null primary key auto_increment,
-datumvrijeme NULL,
+datumvrijeme datetime NULL,
 usluga int not NULL,
 zaposlenici int not null,
 korisnici int not null
