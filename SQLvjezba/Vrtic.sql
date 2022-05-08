@@ -12,18 +12,19 @@ dob int(2)
 
 create table djeca(
 id int not null primary key auto_increment,
-osoba int not NULL,
-skupina int not null
+osoba int not NULL
 );
 
 create table ss(
 id int not null primary key auto_increment,
-naziv varchar(100)
+naziv varchar(100),
+short varchar(15)
 );
 
 create table skupina(
 id int not null primary key auto_increment,
-naziv varchar(30)
+naziv varchar(30),
+djeca int not null
 );
 
 create table odgajateljice(
@@ -32,4 +33,10 @@ osoba int not null,
 ss int not null,
 skupina int not NULL
 );
+
+alter table djeca add foreign key (osoba) references osoba(id);
+alter table skupina add foreign key (djeca) references djeca(id);
+alter table odgajateljice add foreign key (osoba) references osoba(id);
+alter table odgajateljice add foreign key (ss) references ss(id);
+alter table odgajateljice add foreign key (skupina) references skupina(id);
 
