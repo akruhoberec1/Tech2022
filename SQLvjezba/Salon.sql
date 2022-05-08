@@ -29,3 +29,6 @@ cijena decimal(18, 2) default 1500,
 vrijeme smalldatetime NULL
 );
 
+
+alter table usluge add foreign key (djelatnice) references djelatnice(iddjel);
+alter table usluge add foreign key (korisnici) references korisnici(idkor);
