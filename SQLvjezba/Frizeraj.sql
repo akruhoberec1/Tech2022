@@ -33,3 +33,10 @@ sifra int not null primary key auto_increment,
 naziv varchar(60),
 cijena DECIMAL(18,2) DEFAULT 5000
 );
+
+
+alter table zaposlenici add foreign key (osoba) references osoba(idosobe);
+alter table korisnici add foreign key (osoba) references osoba(idosobe);
+alter table rezervacija add foreign key (usluga) references usluge(sifra);
+alter table rezervacija add foreign key (zaposlenici) references zaposlenici(iddjelatnik);
+alter table rezervacija add foreign key (korisnici) references korisnici(idklijent);
